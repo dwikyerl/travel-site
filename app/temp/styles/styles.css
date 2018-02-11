@@ -631,6 +631,14 @@ a {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     text-align: center;
+    padding-top: 88px;
+  }
+
+@media (min-width: 800px) {
+
+.large-hero__text-content {
+      padding-top: 60px
+  }
   }
 
 .large-hero__title {
@@ -726,6 +734,34 @@ a {
       background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
       background-size: cover
   }
+  }
+
+.primary-nav--pull-right {
+    float: right;
+  }
+
+.primary-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+.primary-nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.primary-nav li {
+    list-style: none;
+    float: left;
+    padding: 12px 0;
+    padding-right: 20px;
+  }
+
+.primary-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
   }
 
 .row::after {
@@ -917,6 +953,79 @@ a {
       display: inline;
       margin-bottom: 0;
       margin-right: 2.24rem
+  }
+  }
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 10px 0;
+}
+
+@media (min-width: 800px) {
+
+.site-header {
+    background-color: rgba(47,85,114, .3)
+}
+  }
+
+.site-header__btn-container {
+    float: right;
+  }
+
+.site-header__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) scale(.8);
+            transform: translateX(-50%) scale(.8);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    background-color: #2f5572;
+    padding: 2.5rem 3.6rem;
+  }
+
+@media (min-width: 800px) {
+
+.site-header__logo {
+      left: auto;
+      -webkit-transform: translateX(0);
+              transform: translateX(0)
+  }
+  }
+
+.site-header__logo__graphic {
+    display: block;
+    text-indent: -9999px;
+  }
+
+.site-header__menu-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+@media (min-width: 800px) {
+
+.site-header__menu-icon {
+      display: none
+  }
+  }
+
+.site-header__menu-content {
+    display: none;
+  }
+
+@media (min-width: 800px) {
+
+.site-header__menu-content {
+      display: block
   }
   }
 
