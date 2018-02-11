@@ -898,6 +898,28 @@ a {
   }
   }
 
+.site-footer {
+  background-color: #2f5572;
+  color: #fff;
+  padding: .8rem 0;
+  text-align: center;
+}
+
+.site-footer__text {
+    display: block;
+    margin-bottom: 1.6rem;
+    font-weight: 200;
+  }
+
+@media (min-width: 800px) {
+
+.site-footer__text {
+      display: inline;
+      margin-bottom: 0;
+      margin-right: 2.24rem
+  }
+  }
+
 /* Do not edit modules/ _sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/template/sprite */
 
