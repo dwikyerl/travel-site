@@ -631,6 +631,14 @@ a {
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     text-align: center;
+    padding-top: 88px;
+  }
+
+@media (min-width: 800px) {
+
+.large-hero__text-content {
+      padding-top: 60px
+  }
   }
 
 .large-hero__title {
@@ -725,6 +733,80 @@ a {
 .page-section--testimonials {
       background: url('/assets/images/testimonials-bg.jpg') top center no-repeat;
       background-size: cover
+  }
+  }
+
+.primary-nav {
+  padding-top: 10px;
+}
+
+@media (min-width: 800px) {
+
+.primary-nav {
+    padding-top: 0
+}
+  }
+
+@media (min-width: 800px) {
+
+.primary-nav--pull-right {
+      float: right
+  }
+  }
+
+.primary-nav ul {
+    margin: 0;
+    padding: 0;
+  }
+
+.primary-nav ul::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.primary-nav li {
+    list-style: none;
+    padding-right: 7px;
+    display: inline-block;
+  }
+
+@media (min-width: 800px) {
+
+.primary-nav li {
+      float: left;
+      display: block;
+      padding-right: 20px
+  }
+  }
+
+.primary-nav li:last-child {
+    padding-right: 0;
+  }
+
+@media (min-width: 800px) {
+
+.primary-nav li:last-child {
+      padding-right: 20px
+  }
+  }
+
+.primary-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    padding: 5px 8px;
+    font-size: 1.28rem;
+    background-color: rgba(47,85,114, .5);
+  }
+
+@media (min-width: 800px) {
+
+.primary-nav a {
+      font-size: 1.6rem;
+      padding: 12px 0;
+      background-color: transparent
   }
   }
 
@@ -919,6 +1001,154 @@ a {
       margin-right: 2.24rem
   }
   }
+
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 10px 0;
+  -webkit-transition: background-color .3s ease-out;
+  transition: background-color .3s ease-out;
+
+}
+
+.site-header--is-expanded {
+    background-color: rgba(47,85,114, .55);
+  }
+
+@media (min-width: 800px) {
+
+.site-header {
+    background-color: rgba(47,85,114, .3)
+
+}
+  }
+
+@media (min-width: 800px) {
+
+.site-header__btn-container {
+      float: right
+  }
+  }
+
+.site-header__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) scale(.8);
+            transform: translateX(-50%) scale(.8);
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+    background-color: #2f5572;
+    padding: 2.5rem 3.6rem;
+  }
+
+@media (min-width: 800px) {
+
+.site-header__logo {
+      left: auto;
+      -webkit-transform: translateX(0);
+              transform: translateX(0)
+  }
+  }
+
+.site-header__logo__graphic {
+    display: block;
+    text-indent: -9999px;
+  }
+
+.site-header__menu-icon {
+    z-index: 10;
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+  }
+
+.site-header__menu-icon__middle,
+    .site-header__menu-icon::after,
+    .site-header__menu-icon::before {
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+.site-header__menu-icon__middle {
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out;
+    }
+
+.site-header__menu-icon::after,
+    .site-header__menu-icon::before {
+      content: "";
+      left: 0;
+      -webkit-transition: all .2s ease-out;
+      transition: all .2s ease-out;
+    }
+
+.site-header__menu-icon::before { top: -8px; }
+
+.site-header__menu-icon::after { top: 8px; }
+
+@media (min-width: 800px) {
+
+.site-header__menu-icon {
+      display: none
+  }
+  }
+
+.site-header__menu-icon--close-x > div {
+      opacity: 0;
+      -webkit-transform: scaleX(0);
+              transform: scaleX(0);
+    }
+
+.site-header__menu-icon--close-x::before {
+      top: 0;
+      -webkit-transform: rotate(135deg) scaleX(1.2);
+              transform: rotate(135deg) scaleX(1.2);
+    }
+
+.site-header__menu-icon--close-x::after {
+      top: 0;
+      -webkit-transform: rotate(-135deg) scaleX(1.2);
+              transform: rotate(-135deg) scaleX(1.2);
+    }
+
+.site-header__menu-content {
+    opacity: 0;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    position: relative;
+    z-index: -10;
+    padding-top: 90px;
+    text-align: center;
+  }
+
+@media (min-width: 800px) {
+
+.site-header__menu-content {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      padding-top: 0;
+      opacity: 1;
+      z-index: 1
+  }
+  }
+
+.site-header__menu-content--is-visible {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
 
 /* Do not edit modules/ _sprite directly as it is generated automatically by Gulp.
 Instead edit gulp/template/sprite */

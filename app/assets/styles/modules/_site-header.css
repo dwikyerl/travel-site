@@ -1,0 +1,123 @@
+.site-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 10px 0;
+  transition: background-color .3s ease-out;
+
+  &--is-expanded {
+    background-color: rgba($mainBlue, .55);
+  }
+
+  @mixin atMedium {
+    background-color: rgba($mainBlue, .3);
+  }
+
+  &__btn-container {
+
+    @mixin atMedium {
+      float: right;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(.8);
+    transform-origin: 50% 0%;
+    background-color: $mainBlue;
+    padding: 2.5rem 3.6rem;
+
+    @mixin atMedium {
+      left: auto;
+      transform: translateX(0);
+    }
+  }
+
+  &__logo__graphic {
+    display: block;
+    text-indent: -9999px;
+  }
+
+  &__menu-icon {
+    z-index: 10;
+    width: 20px;
+    height: 19px;
+    position: absolute;
+    top: 25px;
+    right: 15px;
+
+    &__middle,
+    &::after,
+    &::before {
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    &__middle {
+      transition: all .2s ease-out;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      left: 0;
+      transition: all .2s ease-out;
+    }
+
+    &::before { top: -8px; }
+    &::after { top: 8px; }
+
+    @mixin atMedium {
+      display: none;
+    }
+  }
+
+  &__menu-icon--close-x {
+    
+    & > div {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    &::before {
+      top: 0;
+      transform: rotate(135deg) scaleX(1.2);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-135deg) scaleX(1.2);
+    }
+  }
+
+  &__menu-content {
+    opacity: 0;
+    transition: all .3s ease-out;
+    transform: scale(1.2);
+    position: relative;
+    z-index: -10;
+    padding-top: 90px;
+    text-align: center;
+
+    @mixin atMedium {
+      transform: scale(1);
+      padding-top: 0;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    &--is-visible {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+}
