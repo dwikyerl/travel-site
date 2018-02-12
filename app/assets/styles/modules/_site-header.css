@@ -5,13 +5,21 @@
   z-index: 2;
   width: 100%;
   padding: 10px 0;
+  transition: background-color .3s ease-out;
+
+  &--is-expanded {
+    background-color: rgba($mainBlue, .55);
+  }
 
   @mixin atMedium {
     background-color: rgba($mainBlue, .3);
   }
 
   &__btn-container {
-    float: right;
+
+    @mixin atMedium {
+      float: right;
+    }
   }
 
   &__logo {
@@ -35,23 +43,81 @@
   }
 
   &__menu-icon {
+    z-index: 10;
     width: 20px;
-    height: 20px;
-    background-color: #fff;
+    height: 19px;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 25px;
+    right: 15px;
+
+    &__middle,
+    &::after,
+    &::before {
+      position: absolute;
+      width: 20px;
+      height: 3px;
+      background-color: #fff;
+      display: inline-block;
+    }
+
+    &__middle {
+      transition: all .2s ease-out;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      left: 0;
+      transition: all .2s ease-out;
+    }
+
+    &::before { top: -8px; }
+    &::after { top: 8px; }
 
     @mixin atMedium {
       display: none;
     }
   }
 
-  &__menu-content {
-    display: none;
+  &__menu-icon--close-x {
+    
+    & > div {
+      opacity: 0;
+      transform: scaleX(0);
+    }
 
-    @mixin atMedium {
-      display: block;
+    &::before {
+      top: 0;
+      transform: rotate(135deg) scaleX(1.2);
+    }
+
+    &::after {
+      top: 0;
+      transform: rotate(-135deg) scaleX(1.2);
     }
   }
+
+  &__menu-content {
+    opacity: 0;
+    transition: all .3s ease-out;
+    transform: scale(1.2);
+    position: relative;
+    z-index: -10;
+    padding-top: 90px;
+    text-align: center;
+
+    @mixin atMedium {
+      transform: scale(1);
+      padding-top: 0;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    &--is-visible {
+      transform: scale(1);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
 }
